@@ -18,3 +18,4 @@ brew install --cask microsoft-excel
 
 # Commandline tools
 brew install tldr
+brew install thefuck
