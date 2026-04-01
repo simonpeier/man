@@ -1,0 +1,21 @@
+# Applications
+cask "firefox"
+cask "brave-browser"
+cask "google-chrome"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "dbeaver-community"
+cask "sublime-text"
+cask "obsidian"
+cask "notion"
+cask "insomnia"
+cask "spotify"
+cask "rectangle"
+cask "vlc"
+cask "microsoft-word"
+cask "microsoft-powerpoint"
+cask "microsoft-excel"
+
+# Commandline tools
+brew "tldr"
+brew "thefuck"
