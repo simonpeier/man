@@ -1,5 +1,42 @@
 # Mac setup
 
+## Set up SSH
+
+### Import existing keys
+
+To import your old key pair, go to your users root directory and copy the .ssh/ directory to a drive
+
+```bash
+cp -a ~/.ssh /Volumes/<your-drive>
+```
+
+On your new device copy the directory to your users directory
+
+```bash
+cp /Volumes/<your-drive>/.ssh ~/
+```
+
+Make sure, that the file permissions are restricted:
+
+![Permissions](permissions.png)
+
+If they are not change them with:
+
+```bash
+chmod 600 id_rsa
+chmod 644 id_rsa.pub
+chmod 644 known_hosts
+```
+
+### Create new keys
+
+To generate a new pair of SSH keys you can use the following command. Before generating the pair, please check if this is the latest and most secure technology
+
+```bash
+ssh-keygen -t ed25519 -C <username>@simonpeier.net
+```
+
+
 ## Install [Homebrew](https://brew.sh/)
 
 Install homebrew via terminal with the following command:
@@ -69,40 +106,3 @@ Certain plugins require additional installation.
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\n
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting\n
 ```
-
-## Set up SSH
-
-### Import existing keys
-
-To import your old key pair, go to your users root directory and copy the .ssh/ directory to a drive
-
-```bash
-cp -a ~/.ssh /Volumes/<your-drive>
-```
-
-On your new device copy the directory to your users directory
-
-```bash
-cp /Volumes/<your-drive>/.ssh ~/
-```
-
-Make sure, that the file permissions are restricted:
-
-![Permissions](permissions.png)
-
-If they are not change them with:
-
-```bash
-chmod 600 id_rsa
-chmod 644 id_rsa.pub
-chmod 644 known_hosts
-```
-
-### Create new keys
-
-To generate a new pair of SSH keys you can use the following command. Before generating the pair, please check if this is the latest and most secure technology
-
-```bash
-ssh-keygen -t ed25519 -C <username>@simonpeier.net
-```
-
