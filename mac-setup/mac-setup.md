@@ -106,3 +106,24 @@ Certain plugins require additional installation.
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions\n
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting\n
 ```
+
+## Setup Java
+
+Install Java with Brew:
+```bash
+brew install openjdk@21
+```
+
+Create a symbolic link, that macOS can recognize the Homebrew-installed JDK as a system Java installation:
+```bash
+sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
+```
+
+Configure ZSH, such that it knows where Java is installed and which version to use by default:
+```bash
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+Finally set the Java version in applications where it is needed, e.g. in Android Studio or Xcode.
