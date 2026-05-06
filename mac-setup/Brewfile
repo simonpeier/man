@@ -19,3 +19,4 @@ cask "microsoft-excel"
 # Commandline tools
 brew "tldr"
 brew "thefuck"
+brew "xcodes"
